@@ -21,7 +21,7 @@ func init() {
 
 func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
 
-	if !strings.HasPrefix(r.URL.Path, "/debug/pprof") {
+	if !strings.HasPrefix(r.URL.Path, "/debug") {
 		next(w, r)
 		return
 	}
